@@ -25,36 +25,38 @@ class Schedules:
 
     def set_horario_manha(self):
         while True:
+            horario_manha = []
             response = input('Digite o início e fim do horário da manhã, com o formato "HH:MM HH:MM": ').split()
             if len(response) == 0:
                 print('Vocẽ deve digitar alguma coisa!')
             else:
-                self.horario_manha.clear()
                 for i in response:
                     if bool(re.match(self.pattern, i)):
-                        self.horario_manha.append(i)
+                        horario_manha.append(i)
                     else:
                         print('Formato de entrada incorreto ou incompleto!')
-                        self.horario_manha.clear()
+                        horario_manha.clear()
 
                 if bool(re.match(self.pattern, response[0])) and bool(re.match(self.pattern, response[1])):
+                    self.horario_manha = horario_manha
                     break
 
     def set_horario_tarde(self):
         while True:
+            horario_tarde = []
             response = input('Digite o início e fim do horário da tarde, com o formato "HH:MM HH:MM": ').split()
             if len(response) == 0:
                 print('Vocẽ deve digitar alguma coisa!')
             else:
-
                 for i in response:
                     if bool(re.match(self.pattern, i)):
-                        self.horario_tarde.append(i)
+                        horario_tarde.append(i)
                     else:
                         print('Formato de entrada incorreto ou incompleto!')
-                        self.horario_tarde.clear()
+                        horario_tarde.clear()
 
                 if bool(re.match(self.pattern, response[0])) and bool(re.match(self.pattern, response[1])):
+                    self.horario_tarde = horario_tarde
                     break
 
     def show_horario_manha(self):
