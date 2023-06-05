@@ -29,6 +29,7 @@ class Schedules:
             if len(response) == 0:
                 print('Vocẽ deve digitar alguma coisa!')
             else:
+                self.horario_manha.clear()
                 for i in response:
                     if bool(re.match(self.pattern, i)):
                         self.horario_manha.append(i)
@@ -45,6 +46,7 @@ class Schedules:
             if len(response) == 0:
                 print('Vocẽ deve digitar alguma coisa!')
             else:
+
                 for i in response:
                     if bool(re.match(self.pattern, i)):
                         self.horario_tarde.append(i)
