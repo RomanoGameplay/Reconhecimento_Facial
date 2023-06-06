@@ -195,6 +195,7 @@ class InterfaceMain:
             print('\nFIM DO PROGRAMA!')
 
 
+
 if __name__ == '__main__':
     interface = InterfaceMain()
     interface.main()
